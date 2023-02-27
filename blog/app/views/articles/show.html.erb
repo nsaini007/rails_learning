@@ -1,0 +1,14 @@
+<h1>Single Article</h1>
+
+<h1> <%= @article.title %> </h1>
+<p> <%= @article.body %> </p>
+<br>
+<br>
+
+<%= link_to "All Articles Page", root_path %>
+<br>
+<br>
+
+<ul>
+    <li><%= link_to "Edit",edit_article_path(@article) %> </li>
+</ul>
