@@ -13,7 +13,7 @@
 class CreateArticles < ActiveRecord::Migration[7.0]
   def change
     create_table :articles do |t|
-      t.string :title
+      t.string :title, index: true, null: false
       t.text :body
 
       t.timestamps
