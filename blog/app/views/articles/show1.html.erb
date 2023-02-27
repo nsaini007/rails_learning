@@ -1,0 +1,36 @@
+<%# <h1>Single Article</h1> %>
+
+<h1> <%= @article.title %> </h1>
+<p> <%= @article.body %> </p>
+
+<%= link_to "All Articles Page", root_path %>
+
+<ul>
+    <li><%= link_to "Edit",edit_article_path(@article) %> </li>
+    <li><%= link_to "Destroy",article_path(@article),data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are You Sure?"
+    } %></li>
+</ul>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+    <p>
+        <strong><%= comment.commentor %></strong> : <%= comment.body %>
+    </p>
+<% end %>
+
+<h2>Add a Comment:</h2>
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <p>
+        <%= form.label :commentor %><br>
+        <%= form.text_field :commentor %>
+    </p>
+    <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
