@@ -1,0 +1,16 @@
+<h1>Movies</h1>
+
+<ul>
+    <% @movies.each do |movie| %>
+        <% unless movie.archived? %>
+            <li>
+                <!-- <a href="/movies/<%= movie.id %>"> -->
+                <!-- <a href="<%= movie_path(movie) %>"> -->
+                <%= link_to movie.title, movie %>
+                <!-- <%= movie.title %> -->
+            
+            </li>
+        <% end %>
+    <% end %>
+</ul>
+    <%= link_to "New Movie", new_movie_path %>
