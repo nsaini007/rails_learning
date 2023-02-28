@@ -1,6 +1,9 @@
-<h1><%= @movie.title %></h1>
+<h1 class="show__title"><%= @movie.title %></h1>
 
-<p><%= @movie.body %></p>
+<div class="movie__container">
+    <img src="<%= @movie.image%>" alt="">
+    <p><%= @movie.body %></p>
+</div>
 
 <ul>
     <li><%= link_to "Edit", edit_movie_path(@movie) %></li>

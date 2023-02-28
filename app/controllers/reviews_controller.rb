@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
+    # http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
 
     def create
         @movie = Movie.find(params[:movie_id])

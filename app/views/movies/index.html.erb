@@ -1,11 +1,13 @@
 <h1>Movies</h1>
 
-<ul>
+<ul class="container">
     <% @movies.each do |movie| %>
         <% unless movie.archived? %>
             <li>
                 <!-- <a href="/movies/<%= movie.id %>"> -->
                 <!-- <a href="<%= movie_path(movie) %>"> -->
+                <img src="<%= movie.image%>" alt="">
+                    
                 <%= link_to movie.title, movie %>
                 <!-- <%= movie.title %> -->
             
